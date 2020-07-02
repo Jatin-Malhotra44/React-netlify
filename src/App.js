@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Home from './components';
+import Navbar from './components/Navbar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { Route } from 'react-router-dom';
+import Resume from './components/Resume';
+import Portfolio from './components/Portfolio';
+import Contact from './components/ContactMe';
 
-function App() {
+const App=(props)=>{
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <CssBaseline/>
+        <Route path='/' exact component={Home}/>
+        <Route path='/resume' exact component={Resume}/>
+        <Route path='/portfolio' exact component={Portfolio}/>
+        <Route path='/contact' exact component={Contact}/>
     </div>
   );
 }
